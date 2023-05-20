@@ -13,7 +13,7 @@ export default function Main() {
   return (
     <>
       <div className="full-page">
-        <Navbar />
+        <Navbar logo={<img src="img/logo.png" alt="" />} />
         <Header />
         <Banner />
         <Description />

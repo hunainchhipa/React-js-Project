@@ -29,9 +29,25 @@
   text-decoration: none;
   cursor: pointer;
   color: #4ebcd4;
+  display: block;
 }
 .navbar li .navitem:hover {
   color: #7ee0f8;
+}
+.navbar .toggle-button {
+  position: absolute;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 16px;
+}
+.navbar .toggle-button .bar {
+  height: 2px;
+  width: 100%;
+  background-color: #2783f6;
+  border-radius: 10px;
 }
 .navbar img {
   height: 30px;
@@ -40,6 +56,7 @@
   position: relative;
 }
 .dropdown .dropdown-content {
+  z-index: 1;
   position: absolute;
   background-color: white;
   margin-top: 10px;
@@ -152,7 +169,7 @@
 .dataflow .data h1 {
   column-span: all;
   text-align: center;
-  padding: 50px;
+  padding: 50px 0;
   font-size: 3em;
   color: #323232;
 }
@@ -161,7 +178,8 @@
   color: #323232;
 }
 .dataflow .data p,
-.content .hero p {
+.content .hero p,
+.content .hero ul li {
   font-size: 1.3em;
   margin-top: 10px;
   color: #4c4c4c;
@@ -176,6 +194,7 @@
   column-gap: 100px;
   margin: 40px auto;
   width: 80%;
+  align-items: center;
   padding: 20px;
 }
 .content .hero h3 {
@@ -276,7 +295,8 @@
   margin-bottom: 70px;
   font-weight: 300;
 }
-.footerbanner .data-value .btnstart {
+.footerbanner .data-value .btnstart,
+.listbuilding-banner .btnstart {
   background-color: #60cd35;
   color: white;
   font-size: 26px;
@@ -285,7 +305,8 @@
   border-radius: 4px;
   padding: 15px 20px;
 }
-.footerbanner .data-value .btnstart:hover {
+.footerbanner .data-value .btnstart:hover,
+.listbuilding-banner .btnstart:hover {
   background-color: #218721;
 }
 .footerbanner .data-valuelist h2 {
@@ -309,12 +330,9 @@ footer {
 }
 .footer {
   color: #f9f9f9;
-  padding: 50px 0;
   display: flex;
   width: 80%;
-  margin-top: 40px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 60px auto;
   justify-content: space-between;
 }
 .footer .mattermark-address img {
@@ -426,8 +444,211 @@ footer {
   font-weight: 400;
   margin-top: 20px;
 }
-.listbuilding .meeting {
-  width: 100vw;
+.listbuilding-header {
+  background: linear-gradient(
+      to left,
+      rgba(10, 47, 65, 0.8),
+      rgba(10, 47, 65, 0.8)
+    ),
+    url("../../public/img/meeting.jpg");
+  height: auto;
   background-repeat: no-repeat;
   background-size: cover;
+  color: #fff;
+}
+.listbuilding-header .listbuilding-content {
+  text-align: center;
+  width: 65%;
+  margin: 30px auto;
+}
+.listbuilding-header h1 {
+  font-size: 4.5em;
+  font-weight: 200;
+  margin-bottom: 10px;
+}
+.listbuilding-header p {
+  font-size: 1.3em;
+  font-weight: 300;
+  line-height: 30px;
+}
+.listbuilding-header .listbuilding-content embed {
+  height: 520px;
+  width: 800px;
+  padding-top: 20px;
+}
+.content .hero .listbuilding-img {
+  height: 350px;
+  width: 100%;
+}
+.content .hero ul li span {
+  color: #66ccde;
+  font-weight: bold;
+}
+.listbuilding-banner {
+  background-color: #698f9a;
+  color: #fff;
+  text-align: center;
+  padding: 50px;
+}
+.listbuilding-banner h2 {
+  font-size: 1.7em;
+  font-weight: 400;
+  width: 85%;
+  margin: auto;
+  padding-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+  .navbar .toggle-button {
+    display: flex;
+  }
+  .navbar .items {
+    background: white;
+    width: 100%;
+  }
+  .navbar li .navitem {
+    width: 100%;
+    color: #000;
+    background: white;
+  }
+  .navbar li .navitem:hover {
+    color: #000;
+  }
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar .items ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .footer {
+    display: block;
+  }
+  .footer .footerItems {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+  }
+  .footer .footerItems .items {
+    margin-top: 30px;
+  }
+
+  .container .cards {
+    columns: 1;
+    width: 60%;
+  }
+  .container .cards .card {
+    margin-top: 20px;
+  }
+
+  .customer-banner {
+    width: 90%;
+  }
+
+  .description {
+    columns: 1;
+  }
+
+  .dataflow .data {
+    column-gap: 50px;
+    width: 95%;
+  }
+  .dataflow .data h1 {
+    font-size: 2.3em;
+  }
+  .dataflow .data p {
+    font-size: 1em;
+  }
+
+  .content .hero {
+    column-gap: 50px;
+    width: 95%;
+  }
+  .content .hero img {
+    height: 200px;
+  }
+  .content .hero h3 {
+    font-size: 1em;
+  }
+  .content .hero p {
+    font-size: 0.9em;
+  }
+  .content .hero .listbuilding-img {
+    height: 500px;
+  }
+  .listbuilding-header .listbuilding-content embed {
+    height: 320px;
+    width: 500px;
+    padding-top: 20px;
+  }
+
+  .footerbanner {
+    display: block;
+    width: 100%;
+  }
+  .footerbanner .data-value {
+    width: 100%;
+  }
+  .footerbanner .data-valuelist {
+    margin-top: 20px;
+  }
+
+  .signup .signup-form {
+    width: 90%;
+  }
+}
+
+@media (max-width: 425px) {
+  .content .hero {
+    columns: 1;
+  }
+  .content .hero img {
+    margin: 20px 0;
+  }
+
+  .dataflow .data {
+    columns: 1;
+  }
+  .dataflow .data img {
+    height: 300px;
+    margin-top: 20px;
+  }
+
+  .container .cards {
+    width: 95%;
+  }
+
+  .listbuilding-header .listbuilding-content embed {
+    height: 220px;
+    width: 250px;
+    padding-top: 20px;
+  }
+
+  .content .hero .listbuilding-img {
+    height: 200px;
+  }
+
+  .header h1 {
+    font-size: 50px;
+  }
+  .header h2 {
+    font-size: 25px;
+  }
+
+  .listbuilding-header h1 {
+    font-size: 2.5em;
+  }
+  .listbuilding-header p {
+    font-size: 1em;
+    line-height: 20px;
+  }
+
+  .listbuilding-banner h2 {
+    width: 100%;
+  }
+
+  .content .hero h3 {
+    font-size: 1.3em;
+  }
 }

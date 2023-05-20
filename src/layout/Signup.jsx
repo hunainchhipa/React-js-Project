@@ -61,7 +61,7 @@ export default function Signup() {
               <p>How can we help you?</p>
               <textarea name="feedback" id="personal-info" cols="30" rows="2" />
             </div>
-            <button type="button" className="submit-btn">
+            <button type="submit" className="submit-btn">
               Sign Up
             </button>
             <div className="submit-error">
