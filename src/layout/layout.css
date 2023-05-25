@@ -509,7 +509,7 @@ footer {
   .navbar li .navitem {
     width: 100%;
     color: #000;
-    background: white;
+    /* background: white; */
   }
   .navbar li .navitem:hover {
     color: #000;
@@ -521,6 +521,11 @@ footer {
   .navbar .items ul {
     flex-direction: column;
     width: 100%;
+  }
+
+  .dropdown .dropdown-content {
+    position: relative;
+    border: none;
   }
 
   .footer {
